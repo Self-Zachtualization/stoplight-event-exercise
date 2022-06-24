@@ -34,20 +34,30 @@ goButton.addEventListener("click", () => {
 
 let controls = document.getElementById("controls");
 controls.addEventListener("click", (event) => {
-  if (event.target === goButton) {
+  if (event.target === goButton && event.target.classList.contains("button")) {
     if (goLightClasslist.length > 1) {
+      console.log(event);
       console.log(`${event.target.textContent} bulb is on`);
     } else {
       console.log(`${event.target.textContent} bulb is off`);
     }
-  } else if (event.target === slowButton) {
+  } else if (
+    event.target === slowButton &&
+    event.target.classList.contains("button")
+  ) {
     if (slowLightClasslist.length > 1) {
       console.log(`${event.target.textContent} bulb is on`);
     } else {
       console.log(`${event.target.textContent} bulb is off`);
     }
-  } else {
-    if (stopLightClasslist.length > 1) {
+  } else if (
+    event.target === stopButton &&
+    event.target.classList.contains("button")
+  ) {
+    if (
+      stopLightClasslist.length > 1 &&
+      event.target.classList.contains("button")
+    ) {
       console.log(`${event.target.textContent} bulb is on`);
     } else {
       console.log(`${event.target.textContent} bulb is off`);
